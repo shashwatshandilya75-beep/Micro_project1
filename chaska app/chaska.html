@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaska — Order Food Online</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Chaska<span class="dot">.</span></div>
+      <div class="location-pill" id="locPill">
+        <span>📍</span>
+        <div>
+          <span class="lbl">Deliver to</span>
+          <span class="val" id="locVal">Set your location</span>
+        </div>
+      </div>
+      <div class="search">
+        <span>🔍</span>
+        <input id="searchInput" type="text" placeholder="Search for biryani, pizza, dosa...">
+      </div>
+      <button class="cart-btn" id="cartOpenBtn">
+        🛒 Cart <span class="cart-badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Hungry right now</div>
+      <h1>Good food, <em>fast</em><br>at your door.</h1>
+      <p class="sub">Order from Bhopal's favourite kitchens — tap a dish, watch it cook, track it home. No app download needed.</p>
+    </div>
+    <div class="track-card">
+      <div class="track-head">
+        <div>
+          <div class="eta">18 <span style="font-family:'Fraunces';">min</span><span>Estimated delivery</span></div>
+        </div>
+        <div style="text-align:right;">
+          <div class="lbl" style="text-transform:uppercase; font-size:0.65rem; opacity:.65;">Live demo</div>
+          <div style="font-weight:600; font-size:0.85rem;">Rider en route</div>
+        </div>
+      </div>
+      <div class="route-wrap">
+        <svg viewBox="0 0 300 120" preserveAspectRatio="none">
+          <path class="route-path" d="M10,95 C90,20 160,100 290,15"></path>
+          <path class="route-progress" d="M10,95 C90,20 160,100 290,15"></path>
+        </svg>
+        <div class="pin start">🍳</div>
+        <div class="pin end">🏠</div>
+        <div class="scooter">🛵</div>
+      </div>
+      <div class="track-foot">
+        <div class="addr">
+          <span class="lbl">From</span>
+          Spice Route Kitchen, MP Nagar
+        </div>
+        <div class="addr" style="text-align:right;">
+          <span class="lbl">To</span>
+          Your location
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY NAV -->
+  <nav class="cat-nav" id="catNav"></nav>
+
+  <!-- MENU SECTION -->
+  <main class="menu-section" id="menuSection"></main>
+
+  <footer>Chaska — a demo food ordering experience built for practice. Not affiliated with any delivery platform.</footer>
+
+  <!-- CART / CHECKOUT DRAWER -->
+  <div class="overlay" id="overlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-head">
+      <h2 id="drawerTitle">Your cart</h2>
+      <button class="close-btn" id="drawerClose">✕</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot" id="drawerFoot"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
