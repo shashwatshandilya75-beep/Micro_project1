@@ -1,0 +1,71 @@
+/* Custom CSS Variables & Theme Engine */
+@layer utilities {
+  .theme-deepwork {
+    --bg-main: #0b0f19;
+    --accent-primary: #38bdf8; /* Cyan */
+    --accent-secondary: #818cf8;
+  }
+  .theme-admin {
+    --bg-main: #0d1520;
+    --accent-primary: #34d399; /* Emerald */
+    --accent-secondary: #a7f3d0;
+  }
+  .theme-learning {
+    --bg-main: #141022;
+    --accent-primary: #c084fc; /* Purple */
+    --accent-secondary: #f472b6;
+  }
+  .theme-creative {
+    --bg-main: #180f12;
+    --accent-primary: #fb923c; /* Amber */
+    --accent-secondary: #facc15;
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.text-accent-primary {
+  color: var(--accent-primary);
+}
+
+.bg-accent-primary {
+  background-color: var(--accent-primary);
+}
+
+.border-accent-primary {
+  border-color: var(--accent-primary);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 1);
+}
+
+/* Modal Animation */
+.modal-animate {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#quickCaptureModal:not(.hidden) .modal-animate {
+  transform: scale(1);
+  opacity: 1;
+}
