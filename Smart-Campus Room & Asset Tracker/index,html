@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart-Campus Room & Asset Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Campus Rooms &amp; Assets</h1>
+  <label class="clock">Time of day
+    <input id="hour" type="range" min="8" max="18" value="10">
+    <output id="hourOut">10:00</output>
+  </label>
+</header>
+
+<main>
+  <section class="map-panel">
+    <canvas id="map" width="800" height="500" aria-label="Campus floorplan"></canvas>
+    <div class="route-bar">
+      <label>From <select id="from"></select></label>
+      <label>To <select id="to"></select></label>
+      <button id="findRoute" class="primary">Find route</button>
+      <button id="clearRoute">Clear</button>
+      <p id="routeInfo" aria-live="polite">Pick two rooms to see the shortest walk.</p>
+    </div>
+    <p class="legend"><i class="dot free"></i>Available <i class="dot booked"></i>Booked</p>
+  </section>
+
+  <aside>
+    <h2 id="roomSummary"></h2>
+    <ul id="assetSummary"></ul>
+    <h3>Assets</h3>
+    <ul id="assetList" class="rows"></ul>
+    <button id="openBook" class="primary wide">Book a room or asset</button>
+    <p id="toast" role="status"></p>
+  </aside>
+</main>
+
+<dialog id="dlg">
+  <div class="dlg-body">
+    <h2>New booking</h2>
+    <label>What
+      <select id="kind"><option value="room">Room</option><option value="asset">Asset</option></select>
+    </label>
+    <label>Item <select id="item"></select></label>
+    <div class="pair">
+      <label>Start <input id="start" type="number" min="8" max="18" value="10"></label>
+      <label>End <input id="end" type="number" min="9" max="19" value="11"></label>
+    </div>
+    <p id="dlgMsg" class="msg" aria-live="polite"></p>
+    <div class="actions">
+      <button id="cancel">Cancel</button>
+      <button id="confirm" class="primary">Confirm booking</button>
+    </div>
+  </div>
+</dialog>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
